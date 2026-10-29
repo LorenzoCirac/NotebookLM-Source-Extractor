@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NotebookLM Source Extractor</title>
+    <link rel="stylesheet" href="panel.css" />
+    <script type="module" src="panel.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <img src="icons/icon32.png" alt="" width="20" height="20" />
+      <span>Source Extractor</span>
+    </header>
+
+    <main>
+      <section class="card" aria-live="polite">
+        <p class="eyebrow" id="eyebrow">Notebook</p>
+        <h1 id="title">Looking for a notebook…</h1>
+        <p class="muted" id="detail"></p>
+        <div class="card-actions">
+          <button type="button" class="link" id="open-site" hidden>Open NotebookLM</button>
+          <button type="button" class="link" id="retry" hidden>Try again</button>
+        </div>
+      </section>
+
+      <section class="choices" id="choices">
+        <button type="button" class="choice" id="separate" disabled>
+          <span class="choice-title">One file per source</span>
+          <span class="choice-detail">A folder named after the notebook, with a .md file for each source</span>
+        </button>
+        <button type="button" class="choice" id="combined" disabled>
+          <span class="choice-title">All sources in one file</span>
+          <span class="choice-detail">A single .md file with every source, one after another</span>
+        </button>
+      </section>
+
+      <section class="status" id="progress" hidden>
+        <progress id="bar" max="1" value="0"></progress>
+        <p class="muted" id="progress-text"></p>
+      </section>
+
+      <section class="status" id="result" hidden aria-live="polite">
+        <p id="result-text"></p>
+        <div class="result-actions">
+          <button type="button" class="secondary" id="show">Show in folder</button>
+          <button type="button" class="link" id="again">Back</button>
+        </div>
+        <details id="skipped-box" hidden>
+          <summary id="skipped-summary"></summary>
+          <ul id="skipped"></ul>
+        </details>
+      </section>
+    </main>
+
+    <footer class="muted">
+      Reads the sources from your open NotebookLM tab and saves them as Markdown in your Downloads folder. Nothing is
+      sent anywhere else.
+    </footer>
+  </body>
+</html>

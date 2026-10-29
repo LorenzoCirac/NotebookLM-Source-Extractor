@@ -1,0 +1,14 @@
+{
+  "name": "notebooklm-source-extractor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension: save every source of a NotebookLM notebook as Markdown.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "pack": "node --test && node scripts/pack.mjs"
+  }
+}
